@@ -9,6 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useHistory } from 'react-router-dom';
 
+//  Own css file
+import './Posts.css'
+import { Tooltip } from '@material-ui/core';
+
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -43,9 +47,11 @@ const Posts = ({post}) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
+      <Tooltip title="Click for showing comment" interactive>
         <Button onClick={() => handlePostClicked(id)} variant="outlined" color="secondary">
           See More
         </Button>
+      </Tooltip>
       </CardActions>
     </Card>
     );
